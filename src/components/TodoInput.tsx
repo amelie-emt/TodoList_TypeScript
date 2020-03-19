@@ -1,6 +1,6 @@
 import React, { HTMLProps, ChangeEvent } from "react";
 import Button from "./button";
-import {addToList} from "../communication/ListFunctions";
+
 
 interface Props extends HTMLProps<HTMLFormElement> {
     onInputChange: (event: ChangeEvent<HTMLInputElement>) => void;
