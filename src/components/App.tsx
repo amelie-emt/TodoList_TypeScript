@@ -1,6 +1,7 @@
 import React, {ChangeEvent, FormEvent, useState} from "react";
 import TodoList from "./TodoList";
 import TodoInput from "./TodoInput";
+import {addToList, getLast} from "../communication/ListFunctions";
 
 import {Todo} from "../interfaces/Todo";
 
@@ -11,13 +12,23 @@ const App = () => {
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        setTodos(previousTodos => [
-            ...previousTodos,
+        addToList(
             {
-                task: todoValue,
-                finished: false
+                todo: {
+                    task: todoValue,
+                    finished: false
+                }
             }
-        ]);
+         ).then(r => console.log(r))
+        getLast().then(data => {
+            setTodos(previousTodos => [
+                ...previousTodos,
+                {
+                    task: data,
+                    finished: false
+                }
+            ])
+        });
     };
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {

@@ -1,6 +1,6 @@
 import React, { HTMLProps, ChangeEvent } from "react";
 import Button from "./button";
-import {addToList} from "../communication/ListFunctions";
+
 
 interface Props extends HTMLProps<HTMLFormElement> {
     onInputChange: (event: ChangeEvent<HTMLInputElement>) => void;
@@ -8,6 +8,7 @@ interface Props extends HTMLProps<HTMLFormElement> {
 }
 
 const TodoInput = ({ onInputChange, inputValue, ...props }: Props) => {
+
 
 
 
@@ -19,7 +20,7 @@ const TodoInput = ({ onInputChange, inputValue, ...props }: Props) => {
                 onChange={onInputChange}
                 value={inputValue}
             />
-            <Button name="create"/>
+            <Button name="create" />
 
         </form>
     );
