@@ -1,14 +1,22 @@
 import React from "react";
 import TodoListItem from "./TodoListItem";
-const TodoList = () => {
+import {Todo} from "../interfaces/Todo";
+
+interface Props {
+    todos: Todo[];
+}
+
+const TodoList = ({todos}:Props) => {
     return (
         <ul className="list-group">
-            <TodoListItem
-                todo={{
-                    task: "Finish writing this blogpost",
-                    finished: false
-                }}
-            />
+            {todos.map(todo => (
+                <TodoListItem
+                    todo={{
+                        task: todo.task,
+                        finished: todo.finished
+                    }}
+                />
+            ))}
         </ul>
     );
 };

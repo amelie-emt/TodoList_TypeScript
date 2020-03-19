@@ -1,5 +1,5 @@
-import React, { HTMLProps } from "react";
-import axios from 'axios'
+import React from "react";
+
 
 type ButtonProps = {
     name: string
@@ -7,10 +7,7 @@ type ButtonProps = {
 
 const Button = ({name}:ButtonProps) => {
     return (
-
-        <form>
-            <button className="btn btn-primary">{name}</button>
-        </form>
+            <button className="btn btn-primary" >{name}</button>
     );
 };
 export default Button;
