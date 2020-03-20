@@ -2,16 +2,16 @@ import axios from 'axios'
 import {Todo} from "../interfaces/Todo";
 
 interface Props {
-    todo: Todo;
+    task: "";
 }
 
-export const addToList = ({ todo }: Props)=> {
+export const addToList = (task: Props)=> {
 
     return axios
         .post(
             'api/task',
             {
-                title: todo.task
+                title: task
             },
             {
                 headers: {'Content-type': 'application/json'}

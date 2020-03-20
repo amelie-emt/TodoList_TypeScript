@@ -1,47 +1,53 @@
-import React, {ChangeEvent, FormEvent, useState} from "react";
+import React, {ChangeEvent, Component, FormEvent, useState} from "react";
 import TodoList from "./TodoList";
 import TodoInput from "./TodoInput";
 import {addToList, getLast} from "../communication/ListFunctions";
 
-import {Todo} from "../interfaces/Todo";
+
+import {render} from "react-dom";
+
+interface AppProps {
+    
+}
 
 
-const App = () => {
-    const [todos, setTodos] = useState<Array<Todo>> ([]);
-    const [todoValue, setTodoValue] = useState("");
+export class App extends Component<AppProps,{}> {
 
-    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    constructor(props: AppProps) {
+        super(props);
+        this.state = {
+            todoList : [""],
+            todoValue:""
+        }
+    }
+
+    componentDidMount() {
+        this.handleSubmit.bind(this);
+        this.handleChange.bind(this);
+    }
+
+
+     handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        addToList(
-            {
-                todo: {
-                    task: todoValue,
-                    finished: false
-                }
-            }
-         ).then(r => console.log(r))
-        getLast().then(data => {
-            setTodos(previousTodos => [
-                ...previousTodos,
-                {
-                    task: data,
-                    finished: false
-                }
-            ])
-        });
+        addToList(this.state.todoValue).then(r => console.log(r))
+
+         getLast().then(data => {this.setState({todoList: this.state.todoList.concat(data)})});
     };
 
-    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-        setTodoValue(event.currentTarget.value);
+    handleChange =(event: ChangeEvent<HTMLInputElement>) => {
+        this.setState({todoValue: event.currentTarget.value});
     };
 
+    render(){
     return (
         <div>
             <h1>Welcome to my to-do app.</h1>
-            <TodoList todos={todos} />
-            <TodoInput onSubmit={handleSubmit} onInputChange={handleChange}  inputValue={todoValue} />
+            <TodoList todos={this.state.todoList}/>
+            <TodoInput onSubmit={this.handleSubmit.bind(this)} onInputChange={this.handleChange.bind(this)} inputValue={this.state.todoValue}/>
 
         </div>
     );
+}
+)
 };
-export default App;
+
