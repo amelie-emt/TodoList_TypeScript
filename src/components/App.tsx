@@ -1,23 +1,23 @@
-import React, {ChangeEvent, Component, FormEvent, useState} from "react";
+import React, {ChangeEvent, Component, FormEvent} from "react";
 import TodoList from "./TodoList";
 import TodoInput from "./TodoInput";
 import {addToList, getLast} from "../communication/ListFunctions";
 
-
-import {render} from "react-dom";
-
 interface AppProps {
-    
 }
 
+interface AppStates {
+    todoList : string[],
+    todoValue: string
+}
 
-export class App extends Component<AppProps,{}> {
+export class App extends Component<AppProps,AppStates> {
 
     constructor(props: AppProps) {
         super(props);
         this.state = {
             todoList : [""],
-            todoValue:""
+            todoValue : ""
         }
     }
 
@@ -29,9 +29,8 @@ export class App extends Component<AppProps,{}> {
 
      handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        addToList(this.state.todoValue).then(r => console.log(r))
-
-         getLast().then(data => {this.setState({todoList: this.state.todoList.concat(data)})});
+        addToList(this.state.todoValue).then(r => console.log(r));
+        getLast().then(data => {this.setState({todoList: this.state.todoList.concat(data)})});
     };
 
     handleChange =(event: ChangeEvent<HTMLInputElement>) => {
@@ -42,12 +41,10 @@ export class App extends Component<AppProps,{}> {
     return (
         <div>
             <h1>Welcome to my to-do app.</h1>
-            <TodoList todos={this.state.todoList}/>
-            <TodoInput onSubmit={this.handleSubmit.bind(this)} onInputChange={this.handleChange.bind(this)} inputValue={this.state.todoValue}/>
-
+            <TodoList todoList={this.state.todoList}/>
+            <TodoInput onSubmit={this.handleSubmit.bind(this)}  onInputChange={this.handleChange.bind(this)} inputValue={this.state.todoValue}/>
         </div>
     );
 }
-)
 };
 

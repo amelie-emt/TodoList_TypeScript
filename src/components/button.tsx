@@ -1,13 +1,15 @@
-import React from "react";
-
+import React, {Component} from "react";
 
 type ButtonProps = {
     name: string
 }
 
-const Button = ({name}:ButtonProps) => {
-    return (
-            <button className="btn btn-primary" >{name}</button>
-    );
-};
+class Button extends Component<ButtonProps,{}> {
+    render() {
+        return (
+            <button className="btn btn-primary">{this.props.name}</button>
+        );
+    };
+}
+
 export default Button;

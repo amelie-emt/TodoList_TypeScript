@@ -1,23 +1,20 @@
-import React from "react";
-import TodoListItem from "./TodoListItem";
-import {Todo} from "../interfaces/Todo";
+import React, {Component} from "react";
 
 interface Props {
-    todos: Todo[];
+    todoList: string[]
 }
 
-const TodoList = ({todos}:Props) => {
-    return (
-        <ul className="list-group">
-            {todos.map(todo => (
-                <TodoListItem
-                    todo={{
-                        task: todo.task,
-                        finished: todo.finished
-                    }}
-                />
-            ))}
-        </ul>
-    );
+class TodoList extends Component<Props,{}> {
+    render() {
+        return (
+            <ul className="list-group">
+                {this.props.todoList.map(todo => (
+                    <li className="list-group-item" >
+                        {todo}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
 };
 export default TodoList;

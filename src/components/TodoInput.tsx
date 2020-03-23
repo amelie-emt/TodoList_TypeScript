@@ -1,6 +1,5 @@
-import React, { HTMLProps, ChangeEvent } from "react";
+import React, {HTMLProps, ChangeEvent, Component} from "react";
 import Button from "./button";
-
 
 interface Props extends HTMLProps<HTMLFormElement> {
     onInputChange: (event: ChangeEvent<HTMLInputElement>) => void;
@@ -8,21 +7,17 @@ interface Props extends HTMLProps<HTMLFormElement> {
 }
 
 const TodoInput = ({ onInputChange, inputValue, ...props }: Props) => {
+        return (
+            <form {...props}>
+                <input
+                    className="form-control"
+                    placeholder="What would you like to get done?"
+                    onChange={onInputChange}
+                    value={inputValue}
+                />
+                <Button name="create"/>
+            </form>
+        );
+    };
 
-
-
-
-    return (
-        <form {...props}>
-            <input
-                className="form-control"
-                placeholder="What would you like to get done?"
-                onChange={onInputChange}
-                value={inputValue}
-            />
-            <Button name="create" />
-
-        </form>
-    );
-};
 export default TodoInput;
