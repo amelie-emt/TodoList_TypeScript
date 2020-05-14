@@ -3,6 +3,7 @@ import { Todo } from "../interfaces/Todo";
 
 interface Props {
     todo: Todo;
+    key: number;
 }
 
 const TodoListItem = ({ todo }: Props) => {

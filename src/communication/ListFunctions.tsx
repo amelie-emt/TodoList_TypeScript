@@ -1,36 +1,50 @@
 import axios from 'axios'
-import {Todo} from "../interfaces/Todo";
+import {addFolder, Folder} from "../interfaces/Todo";
 
 interface Props {
-    todo: Todo;
+    folder: addFolder;
 }
 
-export const addToList = ({ todo }: Props)=> {
+export const addToList = ({ folder }: Props)=> {
 
     return axios
         .post(
-            'api/task',
+            `http://${window.location.hostname}:3000/library/folders`,
             {
-                title: todo.task
+                name: folder.name,
+                path: folder.path,
+                isPublic: folder.isPublic
             },
             {
                 headers: {'Content-type': 'application/json'}
             }
         )
         .then((response) => {
-
-            console.log(response)
+            console.log(response.data)
         })
+};
 
-}
 
-export const getLast = () => {
+export const getAllFolders = () => {
+    console.log('axios get open');
     return axios
-        .get('api/tasks', {
+        .get(`http://${window.location.hostname}:3000/library/folders`, {
             headers: {'Content-type':'application/json'}
         })
-        .then((response )=> {
-            console.log(response.data[response.data.length-1].title)
-            return response.data[response.data.length-1].title
+        .then((res )=> {
+            console.log('axios getAllFolders');
+            const folders : Array<Folder> = [];
+            Object.keys(res.data).forEach(function(key) {
+                const folder= {
+                    id: res.data[key].id,
+                    name: res.data[key].name,
+                    path: res.data[key].path,
+                    isPublic: res.data[key].isPublic
+                };
+                folders.push(folder)
+            });
+            return folders
         })
-}
+};
+
+

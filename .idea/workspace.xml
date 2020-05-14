@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75d883a1-1921-453b-b0d0-54a29c381e0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/communication/ListFunctions.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/Todo.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/folderList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/communication/ListFunctions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/communication/ListFunctions.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TodoInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoInput.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TodoList.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TodoListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoListItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/todo.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/Todo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/Todo.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +73,13 @@
       <updated>1584538878111</updated>
       <workItem from="1584538880775" duration="8671000" />
       <workItem from="1584607458740" duration="4136000" />
-      <workItem from="1584613068433" duration="3397000" />
+      <workItem from="1584613068433" duration="8908000" />
+      <workItem from="1584694256839" duration="10594000" />
+      <workItem from="1584720561924" duration="861000" />
+      <workItem from="1584953563420" duration="6489000" />
+      <workItem from="1589268891433" duration="14680000" />
+      <workItem from="1589356106758" duration="16572000" />
+      <workItem from="1589441264203" duration="8135000" />
     </task>
     <servers />
   </component>
@@ -82,14 +87,21 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="615" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584541119689">
+    <state x="585" y="110" key="#com.intellij.ide.util.MemberChooser" timestamp="1584626289089">
       <screen x="0" y="23" width="1280" height="709" />
     </state>
-    <state x="615" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1280.709@0.23.1280.709" timestamp="1584541119689" />
-    <state x="464" y="102" width="816" height="553" key="find.popup" timestamp="1584610859739">
-      <screen x="0" y="23" width="1280" height="712" />
+    <state x="585" y="110" key="#com.intellij.ide.util.MemberChooser/0.23.1280.709@0.23.1280.709" timestamp="1584626289089" />
+    <state x="615" y="130" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589271799381">
+      <screen x="0" y="23" width="1280" height="708" />
     </state>
+    <state x="615" y="130" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1280.708@0.23.1280.708" timestamp="1589271799381" />
+    <state x="615" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1280.709@0.23.1280.709" timestamp="1584541119689" />
+    <state x="615" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1280.712@0.23.1280.712" timestamp="1584955297974" />
+    <state x="464" y="102" width="816" height="550" key="find.popup" timestamp="1589274016470">
+      <screen x="0" y="23" width="1280" height="708" />
+    </state>
+    <state x="464" y="102" width="816" height="550" key="find.popup/0.23.1280.708@0.23.1280.708" timestamp="1589274016470" />
     <state x="464" y="102" width="816" height="550" key="find.popup/0.23.1280.709@0.23.1280.709" timestamp="1584541680806" />
-    <state x="464" y="102" width="816" height="553" key="find.popup/0.23.1280.712@0.23.1280.712" timestamp="1584610859739" />
+    <state x="464" y="102" width="816" height="553" key="find.popup/0.23.1280.712@0.23.1280.712" timestamp="1584719960577" />
   </component>
 </project>
